@@ -8,9 +8,14 @@
 
 import UIKit
 
+enum ListSection: Int, CaseIterable {
+  case launches
+}
+
 class LaunchesViewController: UITableViewController {
     
     var detailViewController: DetailViewController? = nil
+    var launches = [LaunchListQuery.Data.Launch.Launch]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,25 +74,70 @@ class LaunchesViewController: UITableViewController {
     // MARK: - Table View
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return ListSection.allCases.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let listSection = ListSection(rawValue: section) else {
+          assertionFailure("Invalid section")
+          return 0
+        }
+              
+        switch listSection {
+        case .launches:
+          return self.launches.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        
-        // TODO: Configure
-        cell.textLabel?.text = "Placeholder"
+        guard let listSection = ListSection(rawValue: indexPath.section) else {
+          assertionFailure("Invalid section")
+          return cell
+        }
+          
+        switch listSection {
+        case .launches:
+          let launch = self.launches[indexPath.row]
+          cell.textLabel?.text = launch.site
+        }
         
         return cell
     }
     
     private func loadLaunches() {
-        // TODO: Load a list of launches
+      Network.shared.apollo
+        .fetch(query: LaunchListQuery()) { [weak self] result in
+        
+        guard let self = self else {
+          return
+        }
+
+        defer {
+          self.tableView.reloadData()
+        }
+                
+        switch result {
+        case .success(let graphQLResult):
+          // TODO
+            if let launchConnection = graphQLResult.data?.launches {
+              self.launches.append(contentsOf: launchConnection.launches.compactMap { $0 })
+            }
+                    
+            if let errors = graphQLResult.errors {
+              let message = errors
+                    .map { $0.localizedDescription }
+                    .joined(separator: "\n")
+              self.showAlert(title: "GraphQL Error(s)",
+                             message: message)
+            }
+        case .failure(let error):
+          // From `UIViewController+Alert.swift`
+          self.showAlert(title: "Network Error",
+                         message: error.localizedDescription)
+        }
+      }
     }
 }
 

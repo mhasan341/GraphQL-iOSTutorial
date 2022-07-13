@@ -10,6 +10,7 @@
 		33257088276A92B500F3E8B4 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33257087276A92B500F3E8B4 /* NotificationView.swift */; };
 		517ACDE6287F54DE00FAC054 /* Types.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517ACDE4287F54DE00FAC054 /* Types.graphql.swift */; };
 		517ACDE7287F54DE00FAC054 /* LaunchList.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517ACDE5287F54DE00FAC054 /* LaunchList.graphql.swift */; };
+		517ACDE9287F55ED00FAC054 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517ACDE8287F55ED00FAC054 /* Network.swift */; };
 		51D5611C287EF4DB00B594DF /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 51D5611B287EF4DB00B594DF /* Apollo */; };
 		51D5611E287EF4DB00B594DF /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 51D5611D287EF4DB00B594DF /* ApolloWebSocket */; };
 		9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */; };
@@ -30,6 +31,7 @@
 		33257087276A92B500F3E8B4 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		517ACDE4287F54DE00FAC054 /* Types.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.graphql.swift; sourceTree = "<group>"; };
 		517ACDE5287F54DE00FAC054 /* LaunchList.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchList.graphql.swift; sourceTree = "<group>"; };
+		517ACDE8287F55ED00FAC054 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		51D56126287F0DF400B594DF /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		51D56127287F0F1900B594DF /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
 		9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				9B8B0F02237CE6AB001326EB /* LaunchScreen.storyboard */,
 				9B8B0F05237CE6AB001326EB /* Info.plist */,
 				51D56127287F0F1900B594DF /* LaunchList.graphql */,
+				517ACDE8287F55ED00FAC054 /* Network.swift */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				9B8B0EF6237CE6A8001326EB /* AppDelegate.swift in Sources */,
 				9B8B0EF8237CE6A8001326EB /* SceneDelegate.swift in Sources */,
 				9B8B0EFA237CE6A8001326EB /* LaunchesViewController.swift in Sources */,
+				517ACDE9287F55ED00FAC054 /* Network.swift in Sources */,
 				517ACDE7287F54DE00FAC054 /* LaunchList.graphql.swift in Sources */,
 				9B8B0EFC237CE6A8001326EB /* DetailViewController.swift in Sources */,
 				9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */,
