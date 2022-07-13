@@ -27,6 +27,7 @@
 /* Begin PBXFileReference section */
 		33257087276A92B500F3E8B4 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		51D56126287F0DF400B594DF /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		51D56127287F0F1900B594DF /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
 		9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		9B685F55238BE71F0084DA15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 				9B8B0F00237CE6AB001326EB /* Assets.xcassets */,
 				9B8B0F02237CE6AB001326EB /* LaunchScreen.storyboard */,
 				9B8B0F05237CE6AB001326EB /* Info.plist */,
+				51D56127287F0F1900B594DF /* LaunchList.graphql */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -99,6 +101,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B8B0F1E237CE6AB001326EB /* Build configuration list for PBXNativeTarget "RocketReserver" */;
 			buildPhases = (
+				517ACDE0287F536000FAC054 /* Apollo */,
 				9B8B0EEE237CE6A8001326EB /* Sources */,
 				9B8B0EEF237CE6A8001326EB /* Frameworks */,
 				9B8B0EF0237CE6A8001326EB /* Resources */,
@@ -168,6 +171,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		517ACDE0287F536000FAC054 /* Apollo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Apollo;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your works# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swiftpace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B8B0EEE237CE6A8001326EB /* Sources */ = {
