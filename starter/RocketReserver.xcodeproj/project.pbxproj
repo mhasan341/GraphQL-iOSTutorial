@@ -26,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		33257087276A92B500F3E8B4 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		51D56126287F0DF400B594DF /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		9B685F55238BE71F0084DA15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		9B8B0EF4237CE6A8001326EB /* RocketReserver */ = {
 			isa = PBXGroup;
 			children = (
+				51D56126287F0DF400B594DF /* schema.json */,
 				9B8B0EF5237CE6A8001326EB /* AppDelegate.swift */,
 				9B8B0EF7237CE6A8001326EB /* SceneDelegate.swift */,
 				9B685F55238BE71F0084DA15 /* LoginViewController.swift */,
